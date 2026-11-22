@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "training_count": 40,
+  "validation_count": 10,
+  "test_count": 50,
+  "epochs_per_model": 3,
+  "ensemble_size": 5,
+  "single": {
+    "validation_accuracy": 0.6,
+    "test_accuracy": 0.4
+  },
+  "ensemble": {
+    "validation_accuracy": 0.4,
+    "test_accuracy": 0.4
+  },
+  "members": [
+    {
+      "member": 1,
+      "validation_accuracy": 0.2,
+      "test_accuracy": 0.36
+    },
+    {
+      "member": 2,
+      "validation_accuracy": 0.3,
+      "test_accuracy": 0.38
+    },
+    {
+      "member": 3,
+      "validation_accuracy": 0.2,
+      "test_accuracy": 0.44
+    },
+    {
+      "member": 4,
+      "validation_accuracy": 0.4,
+      "test_accuracy": 0.36
+    },
+    {
+      "member": 5,
+      "validation_accuracy": 0.2,
+      "test_accuracy": 0.38
+    }
+  ],
+  "versions": {
+    "tensorflow": "2.20.0",
+    "keras": "3.15.1",
+    "numpy": "2.2.6"
+  }
+}

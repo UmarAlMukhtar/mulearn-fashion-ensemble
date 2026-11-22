@@ -41,3 +41,20 @@ The task deliberately uses only 50 source training images and 50 test images. Va
 - [Keras Fashion-MNIST dataset](https://keras.io/api/datasets/fashion_mnist/)
 - [Keras training API](https://keras.io/api/models/model_training_apis/)
 - [Keras reproducibility guide](https://keras.io/examples/keras_recipes/reproducibility_recipes/)
+
+## Recorded results
+
+The [verified GitHub Actions run](https://github.com/UmarAlMukhtar/mulearn-fashion-ensemble/actions/runs/45029879797) completed on the CPU with TensorFlow 2.20.0, Keras 3.15.1, and NumPy 2.2.6.
+
+| Method | Validation accuracy (10 images) | Test accuracy (50 images) |
+| --- | --- | --- |
+| Single CNN | 60% (6/10) | 40% (20/50) |
+| Five-model ensemble | 40% (4/10) | 40% (20/50) |
+
+The ensemble tied the single CNN on this test subset and performed worse on validation. Bootstrap resampling reduces the number of unique examples seen by each member, and three epochs on forty images leave substantial room for underfitting. This run does not demonstrate an ensemble benefit. The subset size and three-epoch limit follow the challenge brief.
+
+![Single CNN and ensemble comparison](results/comparison.png)
+
+![First ten test images with true and ensemble labels](results/test-examples.png)
+
+[Metrics and member scores](results/metrics.json) · [Exact split and bootstrap indices](results/split-and-bootstrap.json) · [Test predictions](results/test-predictions.csv) · [Probability arrays](results/probabilities.npz)
